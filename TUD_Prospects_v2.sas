@@ -1,4 +1,4 @@
-LIBNAME MDRIVE 
+﻿LIBNAME MDRIVE 
 	'\\rmc.local\dfsroot\Dept\Marketing\Analytics\SNAPSHOTS';
 
 Proc SQL;
@@ -15,7 +15,7 @@ Proc SQL;
 		   A.Monthlygrossincome, A.Cifno
 	FROM DW.vw_AppData A
 	where A.ApplicationEnterDateOnly BETWEEN 
-		  '2019-07-09' AND '2019-08-08';
+		  '2019-07-13' AND '2019-08-13';
 RUN;
 
 PROC SORT;  
@@ -130,7 +130,7 @@ DATA APPS(
 	ApplicationEnterDate = MDY(APPMM, APPDAY, APPYR);
 
    *IF '30jun2019'd < ApplicationEnterDate < '01aug2019'd;
-	IF '08jul2019'd < ApplicationEnterDate < '09aug2019'd;
+   *IF '08jul2019'd < ApplicationEnterDate < '09aug2019'd;
 
 	*** CLEAN UP SOME BAD STATE FORMATS -------------------------- ***;
 	IF STATE IN ('AL' 'OK' 'NM' 'NC' 'GA' 'TN' 'MO' 'WI' 'SC' 'TX' 'VA' 
